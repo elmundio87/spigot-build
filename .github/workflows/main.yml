@@ -32,4 +32,11 @@ jobs:
         connection_string: ${{ secrets.BLOB_STORAGE_CONNECTION_STRING }}
         container_name: spigot
         source_dir: ./output
-        
+    
+    - name: Azure Storage Action
+      uses: lauchacarro/Azure-Storage-Action@v1.1
+      with:
+        connection-string: ${{ secrets.BLOB_STORAGE_CONNECTION_STRING }}
+        folder: ./output
+        blob-container-name: spigot
+
