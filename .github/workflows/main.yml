@@ -31,7 +31,7 @@ jobs:
       with:
         # Connection string
         connection-string: ${{ secrets.BLOB_STORAGE_CONNECTION_STRING }}
-        name: spigot
+        name: releases
         path: output
         container: spigot
         cleanup: false
