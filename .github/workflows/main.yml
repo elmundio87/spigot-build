@@ -25,3 +25,14 @@ jobs:
     # Runs a single command using the runners shell
     - name: Build Spigot Release Jar
       run: ./run.sh
+    
+    - name: Upload a Build Artifact to Azure Blob Storage
+      uses: fixpoint/azblob-upload-artifact@v4
+      with:
+        # Connection string
+        connection-string: ${{ secrets.BLOB_STORAGE_CONNECTION_STRING }}
+        name: spigot
+        path: output
+        container: spigot
+        cleanup: false
+
